@@ -193,7 +193,6 @@ class EpisodeSave(_PlayWindow):
 
     def on_loop(self):
         super().on_loop()
-        print("on_loop")
 
         if self.env_done:
             self.env_done = False
