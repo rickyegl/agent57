@@ -24,6 +24,7 @@ from .actor import Actor
 from .learner import Learner
 from .env_play import add_memory
 
+tf.keras.config.enable_unsafe_deserialization()
 
 # 複数のプロセスでGPUを使用する設定
 # https://qiita.com/studio_haneya/items/4dfaf2fb2ac44818e7e0
