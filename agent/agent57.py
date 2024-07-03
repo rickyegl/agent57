@@ -605,7 +605,7 @@ def actor_run(
         # run
         if verbose > 0:
             print("Actor{} Start!".format(actor_index))
-        actor_user.fit(actor_index, runner)
+        actor_user.fit(actor_index, runner,verbose=0)
         
     except KeyboardInterrupt:
         pass
@@ -796,7 +796,7 @@ class ActorRunner(rl.core.Agent):
     def fit(self, env, nb_steps=99_999_999_999, callbacks=[], **kwargs):  # override
         try:
             if self.is_test:
-                super().fit(nb_steps, callbacks, **kwargs)
+                super().fit(nb_steps, callbacks, **kwargs, verbose=0)
                 return
 
             callbacks.extend(self.callbacks.callbacks)
@@ -805,7 +805,7 @@ class ActorRunner(rl.core.Agent):
             callbacks.append(ActorStop(self.is_learner_end))
 
             # keras-rlでの学習
-            super().fit(env, nb_steps=nb_steps, callbacks=callbacks, **kwargs)
+            super().fit(env, nb_steps=nb_steps, callbacks=callbacks, **kwargs, verbose=0)
 
         except Exception:
             print(traceback.print_exc())
