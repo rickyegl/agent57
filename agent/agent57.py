@@ -1,4 +1,9 @@
 import keras.api
+import keras.api._v1
+import keras.api._v2
+import keras.backend
+import keras.saving
+import keras.utils
 import tensorflow as tf
 import rl
 import rl.core
@@ -26,9 +31,9 @@ from .learner import Learner
 from .env_play import add_memory
 
 #tf.keras.config.enable_unsafe_deserialization()
-from keras.saving import serialization_lib
-serialization_lib.enable_unsafe_deserialization()
-
+#from keras.saving import serialization_lib
+#serialization_lib.enable_unsafe_deserialization()
+#tf.keras.utils.c
 # 複数のプロセスでGPUを使用する設定
 # https://qiita.com/studio_haneya/items/4dfaf2fb2ac44818e7e0
 # https://github.com/tensorflow/tensorflow/issues/11812
