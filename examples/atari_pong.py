@@ -19,7 +19,7 @@ from agent.processor import AtariPong
 
 
 seed_everything(42)
-ENV_NAME = "ALE/Pong-v4"
+ENV_NAME = "ALE/Pong-v5"
 episode_save_dir = "tmp_{}.".format(ENV_NAME)
 
 
