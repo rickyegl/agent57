@@ -83,7 +83,9 @@ class Learner():
 
         # model create
         self.actval_ext_model = model_builder.build_actval_func_model(optimizer_ext, uvfa_ext)
-        self.actval_ext_model_target = model_from_json(self.actval_ext_model.to_json())
+        modeljson = self.actval_ext_model.to_json()
+        print(modeljson)
+        self.actval_ext_model_target = model_from_json(modeljson)
         if self.enable_intrinsic_actval_model:
             self.actval_int_model = model_builder.build_actval_func_model(optimizer_int, uvfa_int)
             self.actval_int_model_target = model_from_json(self.actval_int_model.to_json())
