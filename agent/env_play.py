@@ -317,6 +317,7 @@ class EpisodeReplay(_PlayWindow):
 
     def on_loop(self):
         super().on_loop()
+        print("step: {}".format(self.step))
 
         if self.step < 0:
             self.step = 0
